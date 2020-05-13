@@ -144,7 +144,7 @@ RUN pip3 install cython
 
 # Install DeepShere from github
 RUN git clone https://github.com/NDCMS/DeepSphere && \ 
-    cd DeepShere && \
+    cd DeepSphere && \
     pip3 install --no-cache-dir -r "requirements.txt" && \
     cp -r deepsphere $(python3 -c 'import os; import inspect; print(os.path.dirname(inspect.getfile(inspect)))')
 
