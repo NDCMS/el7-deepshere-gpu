@@ -142,6 +142,9 @@ RUN rm get-pip.py
 
 RUN pip3 install cython
 
+ENV LC_CTYPE en_US.UTF-8
+ENV LANG en_US.UTF-8
+
 # Install DeepShere from github
 RUN git clone https://github.com/NDCMS/DeepSphere && \ 
     cd DeepSphere && \
