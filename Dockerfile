@@ -80,7 +80,7 @@ RUN yum -y install \
 RUN yum -y install \
         python3 \
         python3-devel \
-        python3-tk
+        python3-tkinter
 
 # osg
 RUN yum -y install osg-ca-certs osg-wn-client
