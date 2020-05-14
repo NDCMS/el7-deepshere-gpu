@@ -1,6 +1,5 @@
-FROM nvidia/cuda:9.0-cudnn7-devel-centos7
-MAINTAINER Alex Himmel "ahimmel@fnal.gov"
-
+FROM nvidia/cuda:10.2-cudnn7-devel-centos7
+MAINTAINER Kenyi Hurtado "khurtado@nd.edu"
 RUN yum -y upgrade
 RUN yum -y install epel-release yum-plugin-priorities
 
@@ -24,6 +23,7 @@ RUN yum -y install \
 	binutils \
 	binutils-devel \
 	coreutils \
+	cuda-drivers \
 	curl \
 	fontconfig \
 	gcc \
@@ -153,6 +153,9 @@ RUN git clone https://github.com/NDCMS/DeepSphere && \
 
 # Add jupyterhub
 RUN pip3 install jupyterhub==1.0.0 notebook==6.0.3
+
+# Add more recent tensorflow package
+RUN pip3 install tensorflow-gpu==1.15.2
 
 #################################
 # Manually add Singularity files
