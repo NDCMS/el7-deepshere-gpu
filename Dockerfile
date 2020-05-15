@@ -150,7 +150,8 @@ ENV LANG en_US.UTF-8
 RUN git clone https://github.com/NDCMS/DeepSphere && \ 
     cd DeepSphere && \
     pip3 install --no-cache-dir -r "requirements.txt" && \
-    cp -r deepsphere $(python3 -c 'import os; import inspect; print(os.path.dirname(inspect.getfile(inspect)))')
+    cp -r deepsphere /usr/local/lib/$(python3 -V | sed -En "s/Python ([0-9]*)\.([0-9]*).*/python\1.\2/p")/site-packages
+    #cp -r deepsphere $(python3 -c 'import os; import inspect; print(os.path.dirname(inspect.getfile(inspect)))')
 
 # Add jupyterhub
 RUN pip3 install jupyterhub==1.0.0 notebook==6.0.3
