@@ -1,4 +1,5 @@
-FROM nvidia/cuda:10.2-cudnn7-devel-centos7
+#FROM nvidia/cuda:10.2-cudnn7-devel-centos7
+FROM nvidia/cuda:10.0-cudnn7-devel-centos7
 MAINTAINER Kenyi Hurtado "khurtado@nd.edu"
 RUN yum -y upgrade
 RUN yum -y install epel-release yum-plugin-priorities
