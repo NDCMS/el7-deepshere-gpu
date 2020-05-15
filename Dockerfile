@@ -24,7 +24,7 @@ RUN yum -y install \
 	binutils \
 	binutils-devel \
 	coreutils \
-	cuda-drivers \
+#	cuda-drivers \
 	curl \
 	fontconfig \
 	gcc \
